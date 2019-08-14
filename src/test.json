@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Binary Gap",
+        "question": "Write a function:def solution(N)that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.",
+        "answer": [
+            "def solution(N):\n# write your code in Python 3.6\n\nbinary=bin(N)[2:]\nflag=False\nlength=0\ngap=0\ntemp=[ ]\nfor i in binary:\n    if(i=='0'):\n        if(flag==True):\n            length=length+1;\n    if(i=='1'):\n        if(flag==True):\n            if(gap<length):\n                gap=length;\n            length=0;\n               \n        else:\n            flag=True;\nreturn gap"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Binary Gap1",
+        "question": "asdasdasdasdasdasd",
+        "answer": [
+            "asdasdasdasdad\n",
+            "           asdasdasdasdasdasd {asdasdvar=asdasd}"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Binary Gap3",
+        "question": "asdasdasdasdasdasd123",
+        "answer": [
+            "asdasdasdasdad\n",
+            "           asdasdasdasdasdasd {asdasdvar=asdasd}"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Binary Gap4",
+        "question": "asdasdasdasdasdasd123zya",
+        "answer": [
+            "asdasdasdasdaasdasdd\n",
+            "           asdasdasdasdasd1111111111111a1a1a1a1aa1a1a1a1aa1a1aa1a  asdasdasd {asdasdvar=asdasd}"
+        ]
+    }
+]

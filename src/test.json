@@ -2,36 +2,187 @@
     {
         "id": 1,
         "title": "Binary Gap",
-        "question": "Write a function:def solution(N)that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.",
+        "question": [
+            "Write a function:def solution(N)\nthat, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap."
+        ],
         "answer": [
             "def solution(N):\n# write your code in Python 3.6\n\nbinary=bin(N)[2:]\nflag=False\nlength=0\ngap=0\ntemp=[ ]\nfor i in binary:\n    if(i=='0'):\n        if(flag==True):\n            length=length+1;\n    if(i=='1'):\n        if(flag==True):\n            if(gap<length):\n                gap=length;\n            length=0;\n               \n        else:\n            flag=True;\nreturn gap"
         ]
     },
     {
         "id": 2,
-        "title": "Binary Gap1",
-        "question": "asdasdasdasdasdasd",
+        "title": "Odd Occurence in array",
+        "question": [
+            "A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired."
+        ],
         "answer": [
-            "asdasdasdasdad\n",
-            "           asdasdasdasdasdasd {asdasdvar=asdasd}"
+            "def solution(A):\n    # write your code in Python 3.6\n    a=0\n    for i in A:\n        a=a^i\n    return a\n    \n    Pass"
         ]
     },
     {
         "id": 3,
-        "title": "Binary Gap3",
-        "question": "asdasdasdasdasdasd123",
+        "title": "Cyclic Rotation",
+        "question": [
+            "The goal is to rotate array A K times; that is,each element of A will be shifted to the right K times.\nWrite a function:\ndef solution(A, K)\nthat, given an array A consisting of N integers and an integer K, \nreturns the array A rotated K times."
+        ],
         "answer": [
-            "asdasdasdasdad\n",
-            "           asdasdasdasdasdasd {asdasdvar=asdasd}"
+            "def solution(A, K):\n    length=len(A)\n    if(length==0 or length==1):\n        return A\n    else:\n       difference=(K%length)\nfirstpart=A[:-difference]\nsecondpart=A[-difference:]\nreturn (secondpart+firstpart)\n"
         ]
     },
     {
         "id": 4,
-        "title": "Binary Gap4",
-        "question": "asdasdasdasdasdasd123zya",
+        "title": "Frog Jump",
+        "question": [
+            "Write a function:def solution(X, Y, D)that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y."
+        ],
         "answer": [
-            "asdasdasdasdaasdasdd\n",
-            "           asdasdasdasdasd1111111111111a1a1a1a1aa1a1a1a1aa1a1aa1a  asdasdasd {asdasdvar=asdasd}"
+            "def solution(X, Y, D):\n    # write your code in Python 3.6\n    if(X==Y or X>Y):\n        return 0\n    else:\n        distancecover=(Y-X)/D\n        if(distancecover==int(distancecover)):\n            return int(distancecover)\n        else:\n            return int(distancecover)+1\n    Pass"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "PermMissing Element",
+        "question": [
+            "An array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.",
+            "Your goal is to find that missing element.",
+            "Write a function:",
+            "def solution(A)",
+            "that, given an array A, returns the value of the missing element."
+        ],
+        "answer": [
+            "Solution:\ndef solution(A):\n    value=0; value2=0; length=len(A)+2\n    for i in A:\n        value=value^i\n    for j in range(1,length):\n        value2= value2^j\n    return (value^value2)\n    pass\n"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Tape Equilibrium",
+        "question": [
+            "Write a function:that, given a non-empty array A of N integers, returns the minimal difference that can be achieved."
+        ],
+        "answer": [
+            "Solution\n\n\n\n\n# you can write to stdout for debugging purposes, e.g.\n\ndef solution(A):\n    \n    \n    left=right=0\n    add=0\n    minimaldistance=float('inf')\n    length=len(A)\n    for i in A:\n      if(add==0):\n        left=i\n      else:\n        right=right+i\n      add=add+1\n  \n    if (minimaldistance>abs(left-right)):\n      minimaldistance=abs(left-right);\n    \n    \n    \n    for i in range(1,length-1):\n      left=left+A[i];\n      right=right-A[i];\n      if (minimaldistance>abs(left-right)):\n        minimaldistance=abs(left-right);\n    \n    return (minimaldistance)\n        \n        \n    pass\n\n"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "PermCheck",
+        "question": [
+            "Write a function:\n",
+            "def solution(A)",
+            "that, given an array A, returns 1 if array A is a permutation and 0 if it is not."
+        ],
+        "answer": [
+            "Solution:\ndef solution(A):\n\n    length=len(A)\n    # if(length==1 and A[0]!=1):\n    #   return 0\n    A.sort();\n    \n    for i in range(0,length):\n        if(A[i]!=i+1):\n            return 0\n    return 1\n    Pass\n"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "FrogRiverOne",
+        "question": [
+            "Write a function:def solution(X, A)that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river."
+        ],
+        "answer": [
+            "Solution:\nrange(0,len(A)):\n        if(covered[A[index]-1]!=-1):\n            continue\n        else:\n            covered[A[index]-1]=index\n            uncovered=uncovered-1\n            if(uncovered==0):\n                return index\n    return -1\n    \n    \n    \n    Pass\n"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Max Counters",
+        "question": [
+            "Write a function:def solution(X, A)that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river."
+        ],
+        "answer": [
+            "Solution\ndef solution(N, A):\n   # write your code in Python 3.6\n   counter=[0]*N\n   maxvalue=0\n   index=0\n   for i in A:   \n     if(N<i):\n       counter=[maxvalue]*N\n     else:\n      \n       counter[i-1]=counter[i-1]+1\n      \n       maxvalue=max(maxvalue,counter[i-1])\n   return counter\n   pass\n"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Missing Integer",
+        "question": [
+            "Write a function:def solution(A)that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A."
+        ],
+        "answer": [
+            "def solution(A):\n    # write your code in Python 2.7\n    A.sort()\n    mini = 1\n    for elem in A:\n        if elem == mini:\n            mini+=1\n    return mini\n"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Passing Cars",
+        "question": [
+            "Write a function:def solution(A)that, given a non-empty array A of N integers, returns the number of pairs of passing cars.The function should return −1 if the number of pairs of passing cars exceeds 1,000,000,000."
+        ],
+        "answer": [
+            "Solution:def solution(A):\n   tzero=0\n   pair=0\n   for i in A:\n     if(i==0):\n       tzero=tzero+1\n     if(i==1):\n       pair=pair+tzero\n       if(pair>1000000000):\n         return -1\n   return pair \nA=[0,1,0,1,1] \nprint(solution(A))"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "GenomicRangeQuery",
+        "question": [
+            "Write a function:def solution(S, P, Qthat, given a non-empty string S consisting of N characters and two non-empty arrays P and Q consisting of M integers, returns an array consisting of M integers specifying the consecutive answers to all queries.Result array should be returned as an array of integers."
+        ],
+        "answer": [
+            "Solution:\ndef solution(S, P, Q):\n    # write your code in Python 3.6\n   \n    value=[]\n    for i in range(0,len(P)):\n        tempvalue=S[P[i]:Q[i]+1]\n        if('A' in tempvalue):\n          value.append(1)\n        elif('C' in tempvalue):\n          value.append(2)\n        elif('G' in tempvalue):\n          value.append(3)\n        elif('T' in tempvalue):\n          value.append(4)\n    return value\n    \n    Pass"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "MinAvgTwoSlice",
+        "question": [
+            "Write a function:def solution(A)that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice."
+        ],
+        "answer": [
+            "def solution(A):\n   min_idx = 0\n   min_value = 10001\n   for idx in range(0, len(A)-1):\n       if (A[idx] + A[idx+1])/2.0 < min_value:\n           min_idx = idx\n           min_value = (A[idx] + A[idx+1])/2.0\n       if idx < len(A)-2 and \n(A[idx] + A[idx+1] + A[idx+2])/3.0 < min_value:\n           min_idx = idx\n           min_value = (A[idx] + A[idx+1] + A[idx+2])/3.0\n   return min_idx\n\n\nA=[4,2,2,5,5,8]\n\nprint(solution(A))"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "CountDiv",
+        "question": [
+            "Write a function:def solution(A, B, K)that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K, i.e.:{ i : A ≤ i ≤ B, i mod K = 0 }"
+        ],
+        "answer": [
+            "def solution(A, B, K):\n    # write your code in Python 3.6\n    difference=B//K - A//K\n    if A%K==0:\n        difference=difference+1\n    return difference\n    Pass\n"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "MaxProductOfThree",
+        "question": [
+            "Write a function:def solution(A)that, given a non-empty array A, returns the value of the maximal product of any triplet."
+        ],
+        "answer": [
+            "def solution(A):\n    # write your code in Python 3.6\n    A.sort()\n    return max(A[0]*A[1]*A[-1], A[-1]*A[-2]*A[-3])\n    pass\n"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Distinct",
+        "question": [
+            "Write a functionthat, given an array A consisting of N integers, returns the number of distinct values in array A."
+        ],
+        "answer": [
+            "Return len(set(A))"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Triangles",
+        "question": [
+            "Write a function:def solution(A)that, given an array A consisting of N integers, returns 1 if there exists a triangular triplet for this array and returns 0 otherwise."
+        ],
+        "answer": [
+            "def solution(A):\n    # write your code in Python 3.6\n    A.sort()\n    for i in range(0,len(A)-2):\n        if(A[i]+A[i+1]>A[i+2]):\n            return 1\n    return 0\n    Pass\n"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "NumberOfDiscIntersection",
+        "question": [
+            "Write a function: def solution(A)that, given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return −1 if the number of intersecting pairs exceeds 10,000,000."
+        ],
+        "answer": [
+            "def solution(A):\n    discs_count= len(A)            \n    range_upper = [0]*discs_count  \n    range_lower = [0]*discs_count  \n    for index in range(0, discs_count):\n        range_upper[index] = index + A[index]\n        range_lower[index] = index - A[index]\n    range_upper.sort()\n    range_lower.sort()\n    range_lower_index = 0\n    intersect_count = 0\n    for range_upper_index in range(0, discs_count):\n        # Compute for each disc\n        while range_lower_index < discs_count and \n        range_upper[range_upper_index] >= range_lower[range_lower_index]:\n           range_lower_index += 1\n        intersect_count += range_lower_index - range_upper_index -1\n        if intersect_count > 10000000:\n            return -1\n    return intersect_count\n"
         ]
     }
 ]

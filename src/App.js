@@ -1,20 +1,25 @@
 import React from 'react';
+import { BrowserRouter, Route } from "react-router-dom"
 import Body from "./Body";
+import { IdProvider } from "./IdContext"
 import Footer from "./Footer.js"
 import NavBar from "./NavBar"
-import { BrowserRouter, Route } from "react-router-dom"
 import Contact from "./Contact.js"
-import Setting from "./Setting.js"
+
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Route exact path="/" component={Body} />
-        <Route path="/Contact" component={Contact} />
-        <Route path="/Setting" component={Setting} />
-        <Footer />
-      </div>
+      <IdProvider>
+        <div className="App">
+
+          <NavBar />
+
+          <Route exact path="/" component={Body} />
+          <Route path="/Contact" component={Contact} />
+
+          <Footer />
+        </div>
+      </IdProvider>
     </BrowserRouter>
   );
 }

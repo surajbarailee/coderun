@@ -11,16 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-a{
+#anchorspan{
   text-decoration:none;
   padding:3px
 }
-a:hover{
+#anchorspan:hover{
   color:white;
   background-color: black;
   cursor: pointer;
 }
-a:active{
+#anchorspan:active{
   color:white;
   background-color: black;
   cursor: pointer;

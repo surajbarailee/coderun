@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./index.css"
-import { Link, NavLink } from "react-router-dom"
+
+import { NavLink } from "react-router-dom"
+import { IdContext } from "./IdContext"
 
 const NavBarWrapper = {
     color: "white",
@@ -21,17 +23,26 @@ const NavBarWords = {
 const NavWordsPadding = {
     paddingRight: "50px"
 }
+
+
 function NavBar() {
+    var [Id, SetId] = useContext(IdContext);
+    const onClickHandler = (value) => {
+        SetId(Id = 0)
+        console.log("clicked", Id)
+    }
     return (
         <>
+
             <div style={NavBarWrapper}>
                 <div>CodeRun</div>
                 <div style={NavBarLinks}>
-                    <label style={NavWordsPadding}><Link to="/" style={NavBarWords}> Home</Link></label>
-                    <label style={NavWordsPadding}><Link to="/Contact" style={NavBarWords}>Contact</Link></label>
-                    <label style={NavWordsPadding}><Link to="/Setting" style={NavBarWords} >Setting</Link></label>
+                    <label style={NavWordsPadding}><NavLink to="/" style={NavBarWords} onClick={() => onClickHandler()}> Home</NavLink></label>
+                    <label style={NavWordsPadding}><NavLink to="/Contact" style={NavBarWords}>Contact</NavLink></label>
+
                 </div>
             </div>
+
 
 
         </>

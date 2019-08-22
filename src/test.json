@@ -36,7 +36,7 @@
             "Write a function:def solution(X, Y, D)that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y."
         ],
         "answer": [
-            "def solution(X, Y, D):\n    # write your code in Python 3.6\n    if(X==Y or X>Y):\n        return 0\n    else:\n        distancecover=(Y-X)/D\n        if(distancecover==int(distancecover)):\n            return int(distancecover)\n        else:\n            return int(distancecover)+1\n    Pass"
+            "def solution(X, Y, D):\n   if(X==Y or X>Y):\n        return 0\n    else:\n        distancecover=(Y-X)/D\n        if(distancecover==int(distancecover)):\n            return int(distancecover)\n        else:\n            return int(distancecover)+1\n    Pass"
         ]
     },
     {
@@ -50,7 +50,7 @@
             "that, given an array A, returns the value of the missing element."
         ],
         "answer": [
-            "Solution:\ndef solution(A):\n    value=0; value2=0; length=len(A)+2\n    for i in A:\n        value=value^i\n    for j in range(1,length):\n        value2= value2^j\n    return (value^value2)\n    pass\n"
+            "\ndef solution(A):\n    value=0; value2=0; length=len(A)+2\n    for i in A:\n        value=value^i\n    for j in range(1,length):\n        value2= value2^j\n    return (value^value2)\n    pass\n"
         ]
     },
     {
@@ -60,7 +60,7 @@
             "Write a function:that, given a non-empty array A of N integers, returns the minimal difference that can be achieved."
         ],
         "answer": [
-            "Solution\n\n\n\n\n# you can write to stdout for debugging purposes, e.g.\n\ndef solution(A):\n    \n    \n    left=right=0\n    add=0\n    minimaldistance=float('inf')\n    length=len(A)\n    for i in A:\n      if(add==0):\n        left=i\n      else:\n        right=right+i\n      add=add+1\n  \n    if (minimaldistance>abs(left-right)):\n      minimaldistance=abs(left-right);\n    \n    \n    \n    for i in range(1,length-1):\n      left=left+A[i];\n      right=right-A[i];\n      if (minimaldistance>abs(left-right)):\n        minimaldistance=abs(left-right);\n    \n    return (minimaldistance)\n        \n        \n    pass\n\n"
+            "\ndef solution(A):\n    \n    \n    left=right=0\n    add=0\n    minimaldistance=float('inf')\n    length=len(A)\n    for i in A:\n      if(add==0):\n        left=i\n      else:\n        right=right+i\n      add=add+1\n  \n    if (minimaldistance>abs(left-right)):\n      minimaldistance=abs(left-right);\n    \n    \n    \n    for i in range(1,length-1):\n      left=left+A[i];\n      right=right-A[i];\n      if (minimaldistance>abs(left-right)):\n        minimaldistance=abs(left-right);\n    \n    return (minimaldistance)\n        \n        \n    pass\n\n"
         ]
     },
     {
@@ -72,7 +72,7 @@
             "that, given an array A, returns 1 if array A is a permutation and 0 if it is not."
         ],
         "answer": [
-            "Solution:\ndef solution(A):\n\n    length=len(A)\n    # if(length==1 and A[0]!=1):\n    #   return 0\n    A.sort();\n    \n    for i in range(0,length):\n        if(A[i]!=i+1):\n            return 0\n    return 1\n    Pass\n"
+            "\ndef solution(A):\n\n    length=len(A)\n    # if(length==1 and A[0]!=1):\n    #   return 0\n    A.sort();\n    \n    for i in range(0,length):\n        if(A[i]!=i+1):\n            return 0\n    return 1\n    Pass\n"
         ]
     },
     {
@@ -82,7 +82,7 @@
             "Write a function:def solution(X, A)that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river."
         ],
         "answer": [
-            "Solution:\nrange(0,len(A)):\n        if(covered[A[index]-1]!=-1):\n            continue\n        else:\n            covered[A[index]-1]=index\n            uncovered=uncovered-1\n            if(uncovered==0):\n                return index\n    return -1\n    \n    \n    \n    Pass\n"
+            "\nrange(0,len(A)):\n        if(covered[A[index]-1]!=-1):\n            continue\n        else:\n            covered[A[index]-1]=index\n            uncovered=uncovered-1\n            if(uncovered==0):\n                return index\n    return -1\n    \n    \n    \n    Pass\n"
         ]
     },
     {
@@ -92,7 +92,7 @@
             "Write a function:def solution(X, A)that, given a non-empty array A consisting of N integers and integer X, returns the earliest time when the frog can jump to the other side of the river."
         ],
         "answer": [
-            "Solution\ndef solution(N, A):\n   # write your code in Python 3.6\n   counter=[0]*N\n   maxvalue=0\n   index=0\n   for i in A:   \n     if(N<i):\n       counter=[maxvalue]*N\n     else:\n      \n       counter[i-1]=counter[i-1]+1\n      \n       maxvalue=max(maxvalue,counter[i-1])\n   return counter\n   pass\n"
+            "ndef solution(N, A):\n   # write your code in Python 3.6\n   counter=[0]*N\n   maxvalue=0\n   index=0\n   for i in A:   \n     if(N<i):\n       counter=[maxvalue]*N\n     else:\n      \n       counter[i-1]=counter[i-1]+1\n      \n       maxvalue=max(maxvalue,counter[i-1])\n   return counter\n   pass\n"
         ]
     },
     {
@@ -112,7 +112,7 @@
             "Write a function:def solution(A)that, given a non-empty array A of N integers, returns the number of pairs of passing cars.The function should return −1 if the number of pairs of passing cars exceeds 1,000,000,000."
         ],
         "answer": [
-            "Solution:def solution(A):\n   tzero=0\n   pair=0\n   for i in A:\n     if(i==0):\n       tzero=tzero+1\n     if(i==1):\n       pair=pair+tzero\n       if(pair>1000000000):\n         return -1\n   return pair \nA=[0,1,0,1,1] \nprint(solution(A))"
+            "def solution(A):\n   tzero=0\n   pair=0\n   for i in A:\n     if(i==0):\n       tzero=tzero+1\n     if(i==1):\n       pair=pair+tzero\n       if(pair>1000000000):\n         return -1\n   return pair \nA=[0,1,0,1,1] \nprint(solution(A))"
         ]
     },
     {
@@ -122,7 +122,7 @@
             "Write a function:def solution(S, P, Qthat, given a non-empty string S consisting of N characters and two non-empty arrays P and Q consisting of M integers, returns an array consisting of M integers specifying the consecutive answers to all queries.Result array should be returned as an array of integers."
         ],
         "answer": [
-            "Solution:\ndef solution(S, P, Q):\n    # write your code in Python 3.6\n   \n    value=[]\n    for i in range(0,len(P)):\n        tempvalue=S[P[i]:Q[i]+1]\n        if('A' in tempvalue):\n          value.append(1)\n        elif('C' in tempvalue):\n          value.append(2)\n        elif('G' in tempvalue):\n          value.append(3)\n        elif('T' in tempvalue):\n          value.append(4)\n    return value\n    \n    Pass"
+            "def solution(S, P, Q):\n    # write your code in Python 3.6\n   \n    value=[]\n    for i in range(0,len(P)):\n        tempvalue=S[P[i]:Q[i]+1]\n        if('A' in tempvalue):\n          value.append(1)\n        elif('C' in tempvalue):\n          value.append(2)\n        elif('G' in tempvalue):\n          value.append(3)\n        elif('T' in tempvalue):\n          value.append(4)\n    return value\n    \n    Pass"
         ]
     },
     {

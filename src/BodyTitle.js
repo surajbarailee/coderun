@@ -4,26 +4,20 @@ import List from "./test.json"
 import "../src/index.css"
 import { IdContext } from "./IdContext"
 const linktitle = {
-    margin: "5px",
     border: "none",
-    fontSize: "25px",
-    paddingBottom: "5px",
-    paddingRight: "5px"
-
+    fontSize: "20px",
+    paddingRight: "50px",
 }
-const linktitleactive = {
 
-    textDecoration: "underline",
+const linktitleactive = {
+    border: "5px solid black",
     cursor: "pointer",
-    margin: "5px",
     border: "none",
     fontSize: "25px",
-    paddingBottom: "5px"
-
+    backgroundColor: "#ebebeb"
 }
 const wrapper = {
     paddingTop: "100px",
-
 }
 
 function BodyTitle() {
@@ -35,11 +29,10 @@ function BodyTitle() {
 
     return (
         <div style={wrapper}>
-
             {List.map((ListDetails, key) => {
                 return (
-                    <div key={ListDetails.id}>
-                        <span id="anchorspan" style={Id === ListDetails.id ? linktitleactive : linktitle} onClick={() => onClickHandler(ListDetails.id)} href="#">{ListDetails.title}</span>
+                    <div key={ListDetails.id} style={Id === ListDetails.id ? linktitleactive : linktitle} id="anchorspan">
+                        <span onClick={() => onClickHandler(ListDetails.id)} >{ListDetails.title}</span>
                     </div>
                 )
             })}

@@ -23,6 +23,11 @@ const NavBarWords = {
 const NavWordsPadding = {
     paddingRight: "50px"
 }
+const logos = {
+    paddingLeft: "100px",
+    fontFamily: "Comic Sans",
+    fontSize: "30px"
+}
 
 
 function NavBar() {
@@ -35,7 +40,7 @@ function NavBar() {
         <>
 
             <div style={NavBarWrapper}>
-                <div>CodeRun</div>
+                <div style={logos}>CodeRun</div>
                 <div style={NavBarLinks}>
                     <label style={NavWordsPadding}><NavLink to="/" style={NavBarWords} onClick={() => onClickHandler()}> Home</NavLink></label>
                     <label style={NavWordsPadding}><NavLink to="/Contact" style={NavBarWords}>Contact</NavLink></label>

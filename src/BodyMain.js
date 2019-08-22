@@ -1,13 +1,13 @@
 import React, { useContext,useState } from "react"
 import List from "./test.json"
 import { IdContext } from "./IdContext"
+
 const bodycss = {
     fontSize: "25px",
     paddingLeft:"10px"
     
 }
-// var backgroundColor="#d6d6d6"
-// var textColor="black"
+
 const Introduction={
     fontSize:"20px",
     textAlign:"justify",
@@ -15,20 +15,46 @@ const Introduction={
     overflowWrap:"break-word",
     paddingLeft:"10px"
 }
+const ButtonsPrev={
+    backgroundColor: "#4CAF50",
+    border: "none",
+    color: "white",
+    padding: "10px 25px",
+    textAlign: "center",
+    textDecoration: "none",
+    display: "inline-block",
+    fontSize: "16px",
+    margin: "4px 2px",
+    cursor: "pointer",
 
+}
+const ButtonsNext={
+    ...ButtonsPrev,
+    float:"right",
+    backgroundColor: "#4CAF50",
+}
 function BodyMain() {
-    const [Id] = useContext(IdContext);
+    const [Id,SetId] = useContext(IdContext);
     var [textColor,setColor]=useState("#000000")
     const setColorfunction=(e)=>{
         setColor(textColor=e.target.value)
     }
-
+    const  addIdvalue=()=>{
+        if(Id<17){
+        SetId(Id +1)
+        }
+    }
+    const subtractIdvalue=()=> {
+        if(Id>1){
+        SetId(Id -1)
+        }
+    }
     var [BgColor,setBgColor]=useState("#d6d6d6")
 
     const setBgColorfunction=(e)=>{
         setBgColor(BgColor=e.target.value)
     }
-    
+
     if (Id === 0) {
         return (  
         <div style={Introduction}>
@@ -43,38 +69,41 @@ function BodyMain() {
             Have a great time coding and also you can give feedback if something is wrong or just want to say hello!!!
             
             </p>
+            <button style={ButtonsNext} onClick={addIdvalue}>Next</button>
     
         </div>)
     }
-    var text = List.map((Postdetail, index) => {
-        
-        
-        if (Postdetail.id === Id) {
-            return (
-                
-                <div style={bodycss} key={index}>
-                    <p>{Postdetail.title}</p>
-                    <div style={{overflowWrap:"break-word"}}>Question:<br/>{Postdetail.question}<br /></div>
-                    Question Link:<a href="https://codility.com" target="_blank" rel="noopener noreferrer"> Codility</a>
-                    <h2>Solution</h2>
-                        Code:<input type="color" value={textColor} name="textColor" onChange={setColorfunction}/> 
-                        
-                        Background:<input type="color" value={BgColor} name="backgroundColor" onChange={setBgColorfunction}/>
+    if(Id!==0){
+        var text = List.map((Postdetail, index) => {
+            if (Postdetail.id === Id) {
+                return (
                     
-                    <div style={{ backgroundColor: `${BgColor}`, padding: "10px 50px",color:`${textColor}`,overflowWrap:"break-word"}}><pre>{Postdetail.answer}</pre></div>
-                </div>
-                
-            )
-        }
-        
-
-    })
-    return (
-
-
-        <div>{text}</div>
-
-    )
-
+                    <div style={bodycss} key={index}>
+                        <p><h3>{Postdetail.title}</h3></p>
+                        <div style={{overflowWrap:"break-word"}}><p>Question:</p><br/>{Postdetail.question}<br /></div>
+                        Question Link:<a href="https://codility.com" target="_blank" rel="noopener noreferrer"> Codility</a>
+                        <h3>Solution</h3>
+                            Code:<input type="color" value={textColor} name="textColor" onChange={setColorfunction}/> 
+                            
+                            Background:<input type="color" value={BgColor} name="backgroundColor" onChange={setBgColorfunction}/>
+                        
+                        <div style={{ backgroundColor: `${BgColor}`, padding: "10px 50px",color:`${textColor}`,overflowWrap:"break-word"}}><pre>{Postdetail.answer}</pre></div>
+                    </div>
+                    
+                )
+            }
+            
+    
+        })
+        return (
+            <>
+            <div>{text}</div>
+            <div>
+                <button style={ButtonsPrev} onClick={subtractIdvalue}>Previous</button>
+                <button style={ButtonsNext} onClick={addIdvalue}>Next</button>
+            </div>
+            </>
+        )
+    }
 }
 export default BodyMain

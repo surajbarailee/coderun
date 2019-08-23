@@ -35,7 +35,7 @@ const ButtonsNext={
 }
 function BodyMain() {
     const [Id,SetId] = useContext(IdContext);
-    var [textColor,setColor]=useState("#211e1e")
+    var [textColor,setColor]=useState("#4d4d4d")
     const setColorfunction=(e)=>{
         setColor(textColor=e.target.value)
     }

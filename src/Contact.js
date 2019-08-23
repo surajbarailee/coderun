@@ -29,7 +29,7 @@ function Contact() {
     return (
         <>
             <div style={{ textAlign: "center", fontSize: "25px" }}>
-                <p> Any Suggestions, Errors or just a passing by hello anything will be appriciated:<br />😄😄😄</p>
+                <p> Any Suggestions, Errors or just a passing by hello anything will be appreciated:<br />😄😄😄</p>
             </div>
             <form method="POST" action="https://formspree.io/baraileesuraj@gmail.com">
                 <div style={formWrapper}>
